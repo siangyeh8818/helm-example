@@ -1,0 +1,9 @@
+apiVersion: v2
+name: cephcluster
+description: A Helm chart for ceph cluster 
+
+type: application
+
+version: 1.0.3
+
+appVersion: 1.0.0
