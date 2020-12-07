@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "club-fastdfs.fullname" . }}
+  labels:
+    {{- include "club-fastdfs.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: 8088
+      targetPort: nginx
+      protocol: TCP
+      name: nginx
+    - port: 22122
+      targetPort: tracker
+      protocol: TCP
+      name: tracker
+    - port: 23000
+      targetPort: storage
+      protocol: TCP
+      name: storage
+  selector:
+    {{- include "club-fastdfs.selectorLabels" . | nindent 4 }}
