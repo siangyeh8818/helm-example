@@ -1,0 +1,21 @@
+{{- if .Values.servicemonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    k8s-app: {{ include "mysql-exporter.fullname" . }}
+    app: prometheus-operator
+    release: prometheus-operator
+  name: {{ include "mysql-exporter.fullname" . }}
+spec:
+  endpoints:
+  - targetPort: 9104
+    honorLabels: true
+    interval: 300s
+  namespaceSelector:
+    matchNames:
+    - {{ .Release.Namespace }}
+  selector:
+    matchLabels:
+      {{- include "mysql-exporter.selectorLabels" . | nindent 6 }}
+{{- end }}
