@@ -1,0 +1,19 @@
+apiVersion: v2
+appVersion: 2.1.0
+dependencies:
+- condition: mysql.enable
+  name: mysql
+  repository: https://charts.helm.sh/stable
+  version: 1.6.7
+- condition: hdfs.enabled
+  name: hdfs
+  repository: https://gradiant.github.io/charts
+  version: ~0.1.8
+- condition: zookeeper.enabled
+  name: zookeeper
+  repository: https://charts.helm.sh/incubator
+  version: ~2.1.0
+description: A Helm chart for Pinpoint
+name: pinpoint
+type: application
+version: 0.1.0

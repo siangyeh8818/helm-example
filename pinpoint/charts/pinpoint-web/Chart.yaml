@@ -1,0 +1,8 @@
+apiVersion: v2
+appVersion: 2.1.0
+description: A Helm chart for Pinpoint Web
+keywords:
+- web
+name: pinpoint-web
+type: application
+version: 0.1.0

@@ -1,0 +1,23 @@
+apiVersion: v2
+appVersion: 0.21.2
+description: A Helm chart for NATS Streaming
+icon: https://nats.io/img/nats-icon-color.png
+keywords:
+- nats
+- streaming
+- stan
+- delivery
+- ratelimit
+- replay
+- statefulset
+- cncf
+maintainers:
+- email: wally@nats.io
+  name: Waldemar Quevedo
+- email: colin@nats.io
+  name: Colin Sullivan
+- email: jaime@nats.io
+  name: Jaime Piña
+- name: rchenzheng
+name: stan
+version: 0.8.0
